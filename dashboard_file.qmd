@@ -1,0 +1,57 @@
+---
+title: "Insect_spray dashboard"
+format: dashboard
+---
+
+```{r}
+library(tidyverse)
+library(plotly)
+library(reactable)
+library(bslib)
+library(bsicons)
+library(shiny)
+```
+
+# A database analysis related to insect sprays
+
+##
+
+```{r}
+value_box(
+  title = "Customer lifetime value",
+  value = "$5,000",
+  showcase = bsicons::bs_icon("bank2"),
+  theme = "primary"
+)
+```
+
+```{r}
+value_box(
+  title = "Customer lifetime value",
+  value = "$5,000",
+  showcase = bsicons::bs_icon("bank2"),
+  theme = "teal"
+)
+```
+
+```{r}
+value_box(
+  title = "Customer lifetime value",
+  value = "$5,000",
+  showcase = bsicons::bs_icon("bank2"),
+  theme = "teal"
+)
+```
+
+## 
+
+```{r}
+p <-  ggplot(InsectSprays, aes(x=spray, y =count, fill = spray)) + geom_boxplot()
+ggplotly(p)  
+```
+
+## 
+```{r}
+reactable(InsectSprays, searchable = T, filterable = T)
+```
+
